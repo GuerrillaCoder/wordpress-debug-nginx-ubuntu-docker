@@ -14,7 +14,7 @@ services:
         ports:
             - "3156:3306"
     wordpress:
-        image: digitalreach/wordpress-xdebug-nginx-ubuntu
+        image: digitalreach/wordpress-debug-nginx-ubuntu
         container_name: wordpress-debug-nginx-ubuntu
         ports: 
             - "5330:2222"
