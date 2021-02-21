@@ -6,7 +6,9 @@ ENV TZ=Europe/London
 
 RUN apt-get update && apt-get install -y supervisor php7.4-fpm htop openssh-server libxml2-dev libmemcached-tools \
     memcached zlib1g-dev libpq-dev libmemcached-dev vim nginx php-memcached php-soap curl zip unzip php-curl \
-    php-dom php-gd php-mbstring php-mysql php-xml php-imagick php-ssh2 php-exif php-xdebug htop
+    php-dom php-gd php-mbstring php-mysql php-xml php-imagick php-ssh2 php-exif htop php-pear php-dev
+
+RUN pecl install xdebug
 
 RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar \
     && chmod +x wp-cli.phar \
