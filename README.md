@@ -38,4 +38,4 @@ services:
 volumes:
     db_data: {}
     wp_data: {}
-    ```
+```
