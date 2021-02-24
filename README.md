@@ -1,5 +1,7 @@
 # wordpress-debug-nginx-ubuntu-docker
 
+Xdebug port is set to 9090
+
 ```
 version: "3.8"
 services:
@@ -33,7 +35,6 @@ services:
             WORDPRESS_DB_USER: wordpress
             WORDPRESS_DB_PASSWORD: wordpress
             WORDPRESS_DB_NAME: wordpress
-            XDEBUG_CONFIG: remote_host=host.docker.internal
 volumes:
     db_data: {}
     wp_data: {}
