@@ -28,6 +28,7 @@ if [ ! -f "$CONFIG" ]; then
     --extra-php <<PHP
 define( 'WP_DEBUG', true );
 define( 'WP_DEBUG_LOG', true );
+define( 'ALTERNATE_WP_CRON', true );
 PHP
     chown -R www-data:www-data /var/www/html
 fi
