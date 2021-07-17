@@ -4,11 +4,14 @@ server {
     server_name  localhost;
 	
 	fastcgi_read_timeout 600;
-     proxy_read_timeout 600;
-
+    proxy_read_timeout 600;
+	client_max_body_size 0;
+	
     #charset koi8-r;
-    access_log  /var/log/nginx/host.access.log;
-    error_log /var/log/nginx/host.error.log;
+    #access_log  /var/log/nginx/host.access.log;
+    #error_log /var/log/nginx/host.error.log;
+    access_log  /dev/stdout;
+    error_log /dev/stdout;
     root /var/www/html;
 
     location = /favicon.ico {
