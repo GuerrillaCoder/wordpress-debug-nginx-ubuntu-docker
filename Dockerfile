@@ -1,10 +1,10 @@
-FROM ubuntu:20.04
+FROM ubuntu:22.04
 
 ENV DEBUG_IP=host.docker.internal
 ARG DEBIAN_FRONTEND=noninteractive
 ENV TZ=Europe/London
 
-RUN apt-get update && apt-get install -y supervisor php7.4-fpm htop openssh-server libxml2-dev libmemcached-tools \
+RUN apt-get update && apt-get install -y supervisor php8.0-fpm htop openssh-server libxml2-dev libmemcached-tools \
     memcached zlib1g-dev libpq-dev libmemcached-dev vim nginx php-memcached php-soap curl zip unzip php-curl \
     php-dom php-gd php-mbstring php-mysql php-xml php-imagick php-ssh2 php-exif htop php-pear php-dev
 

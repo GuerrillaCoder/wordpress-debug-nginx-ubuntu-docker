@@ -4,7 +4,6 @@ server {
     server_name  localhost;
 	
 	fastcgi_read_timeout 600;
-	fastcgi_send_timeout 600;
     proxy_read_timeout 600;
 	client_max_body_size 0;
 	
@@ -124,6 +123,8 @@ server {
         fastcgi_pass   127.0.0.1:9000;
         fastcgi_index  index.php;
         fastcgi_param  SCRIPT_FILENAME $document_root$fastcgi_script_name;
+		fastcgi_read_timeout 600;
+        fastcgi_send_timeout 600;
         
     }
 
