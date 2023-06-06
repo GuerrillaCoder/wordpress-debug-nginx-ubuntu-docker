@@ -4,7 +4,7 @@ ENV DEBUG_IP=host.docker.internal
 ARG DEBIAN_FRONTEND=noninteractivegi
 ENV TZ=Europe/London
 
-RUN apt-get update -y && apt-get install -y lsb-release gnupg2 dirmngr ca-certificates apt-transport-https software-properties-common
+RUN apt-get update -y && apt-get install -y apt-utils lsb-release gnupg2 dirmngr ca-certificates apt-transport-https software-properties-common
 
 RUN add-apt-repository ppa:ondrej/php -y
 
