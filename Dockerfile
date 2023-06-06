@@ -1,7 +1,7 @@
 FROM ubuntu:22.04
 
 ENV DEBUG_IP=host.docker.internal
-ARG DEBIAN_FRONTEND=noninteractive
+ARG DEBIAN_FRONTEND=noninteractivegi
 ENV TZ=Europe/London
 
 RUN apt-get update && apt-get install -y supervisor php8.1-fpm htop openssh-server libxml2-dev libmemcached-tools \
