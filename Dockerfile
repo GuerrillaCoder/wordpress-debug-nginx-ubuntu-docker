@@ -44,8 +44,8 @@ COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 COPY nginx/default /etc/nginx/sites-available/
 
-COPY wp-init.sh /usr/local/bin/
-RUN chmod +x /usr/local/bin/wp-init.sh
+COPY wp-init-new.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/wp-init-new.sh
 
 COPY wp-config-docker.php /var/www/html/
 
