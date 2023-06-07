@@ -47,8 +47,10 @@ COPY nginx/default /etc/nginx/sites-available/
 COPY wp-init.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/wp-init.sh
 
+COPY wp-config-docker.php /var/www/html/
+
 VOLUME /var/www/html
 
 # ENTRYPOINT /usr/local/bin/wp-debug-init.sh php-fpm
 # ENTRYPOINT /usr/local/bin/wp-init.sh && tail -f /dev/null
-ENTRYPOINT /usr/local/bin/wp-init.sh && /usr/bin/supervisord
+ENTRYPOINT /usr/local/bin/wp-init-new.sh && /usr/bin/supervisord
