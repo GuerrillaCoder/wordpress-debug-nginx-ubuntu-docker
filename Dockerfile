@@ -1,18 +1,18 @@
 FROM ubuntu:22.04
 
 ENV DEBUG_IP=host.docker.internal
-ARG DEBIAN_FRONTEND=noninteractivegi
+ARG DEBIAN_FRONTEND=noninteractive
 ENV TZ=Europe/London
 
 RUN apt-get update -y && apt-get install -y apt-utils dialog lsb-release gnupg2 dirmngr ca-certificates apt-transport-https software-properties-common
 
 RUN add-apt-repository ppa:ondrej/php -y
 
-RUN apt-get update -y && apt-get install -y supervisor php8.2-fpm php8.2-cli php8.2-common  htop openssh-server libxml2-dev libmemcached-tools \
-    memcached zlib1g-dev libpq-dev libmemcached-dev vim nginx php8.2-memcached php8.2-soap curl zip unzip php8.2-curl \
-    php8.2-dom php8.2-gd php8.2-mbstring php8.2-mysql php8.2-xml php8.2-imagick php8.2-ssh2 php8.2-exif htop php-pear php-dev
+RUN apt-get update -y && apt-get install -y supervisor php8.1-fpm php8.1-cli php8.1-common  htop openssh-server libxml2-dev libmemcached-tools \
+    memcached zlib1g-dev libpq-dev libmemcached-dev vim nginx php8.1-memcached php8.1-soap curl zip unzip php8.1-curl \
+    php8.1-dom php8.1-gd php8.1-mbstring php8.1-mysql php8.1-xml php8.1-imagick php8.1-ssh2 php8.1-exif php8.1-xdebug htop php-pear php-dev
 
-RUN pecl channel-update pecl.php.net && pecl install xdebug
+#RUN pecl channel-update pecl.php.net && pecl install xdebug
 
 RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar \
     && chmod +x wp-cli.phar \
